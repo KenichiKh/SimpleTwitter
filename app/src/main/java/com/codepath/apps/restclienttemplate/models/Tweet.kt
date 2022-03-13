@@ -1,5 +1,7 @@
 package com.codepath.apps.restclienttemplate.models
 
+import android.text.format.Time
+import com.codepath.apps.restclienttemplate.TimeFormatter
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -15,6 +17,7 @@ class Tweet {
             tweet.body = jsonObject.getString("text")
             tweet.createdAt = jsonObject.getString("created_at")
             tweet.user = User.fromJson(jsonObject.getJSONObject("user"))
+
             return tweet
         }
 

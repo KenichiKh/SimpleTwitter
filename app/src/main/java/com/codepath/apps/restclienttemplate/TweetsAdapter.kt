@@ -27,10 +27,14 @@ class TweetsAdapter(val tweets: ArrayList<Tweet>) : RecyclerView.Adapter<TweetsA
        // Get the data model based on the position
         val tweet: Tweet = tweets.get(position)
 
+     // Set item views based on the views and data model
+        var formattedTime = TimeFormatter.getTimeDifference(tweet.createdAt)
+
      //Set item views based on views and data model
 
      holder.tvUserName.text = tweet.user?.name
      holder.tvTweetBody.text = tweet.body
+     holder.tvTimeStamp.text = formattedTime
 
      Glide.with(holder.itemView).load(tweet.user?.publicImageUrl).into(holder.ivProfileImage)
     }
@@ -54,6 +58,7 @@ class TweetsAdapter(val tweets: ArrayList<Tweet>) : RecyclerView.Adapter<TweetsA
         val ivProfileImage = itemView.findViewById<ImageView>(R.id.ivProfileImage)
         val tvUserName = itemView.findViewById<TextView>(R.id.tvUserName)
         val tvTweetBody = itemView.findViewById<TextView>(R.id.tvTweetBody)
+        val tvTimeStamp = itemView.findViewById<TextView>(R.id.tvTimeStamp)
 
 
 
