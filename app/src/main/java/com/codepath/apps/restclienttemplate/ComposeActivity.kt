@@ -34,7 +34,7 @@ class ComposeActivity : AppCompatActivity() {
 //        tILayout = findViewById(R.id.tILayout)
 
         etCompose.addTextChangedListener(object : TextWatcher{
-            val tweetContent = etCompose.text.toString()
+            val tweetContent = etCompose.text
 //            val tweetCounter = tweetContent.length
 //            val maxChar = 280
 //            val charLeft = maxChar
